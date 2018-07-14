@@ -26,4 +26,4 @@
 /config/master.key
 
 #Coisas que eu adicionei
-config/environments/*.rb #para nao comitar a senha do meu gmail
+/config/environments/development.rb #para nao comitar a senha do meu gmail
