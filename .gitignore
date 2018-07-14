@@ -24,3 +24,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+#Coisas que eu adicionei
+config/environments/*.rb #para nao comitar a senha do meu gmail
