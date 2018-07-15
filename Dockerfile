@@ -4,6 +4,10 @@ FROM ruby:2.4
 # well as RubyGems. As the Ruby image itself is based on a 
 # Debian image, we use apt-get to install those.
 RUN apt-get update && apt-get install -y \ 
+  && apt-get install curl gnupg -yq \
+  && curl -sL https://deb.nodesource.com/setup_8.x | bash \
+  && apt-get install nodejs -yq \
+  && apt-get install yarn -y\
   build-essential \ 
   nodejs
 
