@@ -65,3 +65,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 # Usando react para front-end
 gem 'react-rails'
+# Usando webpacker para compatibilidade com react
+gem 'webpacker'
