@@ -2,16 +2,15 @@
  
 <table>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th>Link</th>
     <th>Actions</th>
   </tr>
  
   <% @sites.each do |site| %>
     <tr>
-      <td><%= site.title %></td>
-      <td><%= site.text %></td>
+      <td><%= link_to site.title, site.text, :target => "_blank" %></td>
       <td><%= link_to 'Show', site_path(site) %></td>
+      <td><%= link_to 'Edit', edit_site_path(site) %></td>
     </tr>
   <% end %>
   <%= link_to 'Add new site', new_site_path %>
