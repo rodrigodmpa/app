@@ -1,0 +1,20 @@
+<h1>Listing sites of <%=current_user.name%></h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Actions</th>
+  </tr>
+ 
+  <% @sites.each do |site| %>
+    <tr>
+      <td><%= site.title %></td>
+      <td><%= site.text %></td>
+      <td><%= link_to 'Show', site_path(site) %></td>
+    </tr>
+  <% end %>
+  <%= link_to 'Add new site', new_site_path %>
+</table>
+<p>
+<%= link_to 'Back', root_path %>
