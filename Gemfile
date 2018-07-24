@@ -69,6 +69,9 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.2'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'autoprefixer-rails', '~> 9.0'
 
+#font awesome
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+
 #devise
 gem 'devise'
 
