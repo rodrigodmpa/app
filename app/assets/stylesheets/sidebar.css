@@ -20,7 +20,20 @@
     transition: 0.3s;
 }
 
+.sidenav .link-to {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
 .sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .link-to:hover {
     color: #f1f1f1;
 }
 
@@ -39,4 +52,5 @@
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+  .sidenav .link-to {font-size: 18px;}
 }
