@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+//minha sidebar
+//= require sidebar
 //= require rails-ujs
 //= require activestorage
 //= require jquery3
