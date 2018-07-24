@@ -12,10 +12,18 @@ class SitesController < ApplicationController
 
     def edit
         @site = Site.find(params[:id])
+        
+        if !@site.text.start_with?('http')
+            @site.text = 'https://'+@site.text
+        end
       end
 
     def create
         @site = Site.new(site_params)
+        # add this if you want to force the concatenation of https://
+        # if !@site.text.start_with?('http')
+        #     @site.text = 'https://'+@site.text
+        # end
         @site.user_id = current_user.id
 
         if @site.save
@@ -28,9 +36,9 @@ class SitesController < ApplicationController
 
     def update
         @site = Site.find(params[:id])
-       
+
         if @site.update(site_params)
-          redirect_to @site
+          redirect_to sites_path
         else
           render 'edit'
         end

@@ -1,34 +1,46 @@
-<h1>New Site</h1>
-<%= form_with scope: :site, url: sites_path, local: true do |form| %>
+<div class="container-fluid" align="center">
+  <div class="row">
+    <div class="col-sm-3 ">
+      <div class="card bg-dark text-white">
+        <div class="card-header bg-secondary ">
+            New Site
+        </div>
+        <%= form_with scope: :site, url: sites_path, local: true do |form| %>
 
-<% if @site.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@site.errors.count, "error") %> prohibited
-        this site from being saved:
-      </h2>
-      <ul>
-        <% @site.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+          <% if @site.errors.any? %>
+              <div id="error_explanation">
+                <h2>
+                  <%= pluralize(@site.errors.count, "error") %> prohibited
+                  this site from being saved:
+                </h2>
+                <ul>
+                  <% @site.errors.full_messages.each do |msg| %>
+                    <li class="list-group-item list-group-item-warning"><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+          
+            <p>
+            <div class="form-group mr-5 ml-5">
+              <p>
+                <h5 class="card-title "><%= form.label :title %></h5><br>
+                <%= form.text_field :title, :class => "form-control bg-secondary text-white" %>
+              </p>
+            </div>
+            <div class="form-group mr-5 ml-5">
+            <p>
+              <h5 class="card-title "><%= form.label :text %></h5><br>
+              <center><%= form.text_area :text , value: 'https://' , :class => "form-control bg-secondary text-white"  %></center>
+            </p>
+            </div>
+            <p>
+              <center><%= form.submit 'Salvar', :class => "btn btn-outline-success mr-5 ml-5 text-white" %></center>
+            </p>
+        <%= link_to 'Back', sites_path, :class => "btn btn-outline-danger btn-sm mr-5 ml-5 mb-3 text-white" %>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
 
-<%= link_to 'Back', sites_path %>
+      </div>
+    </div>
+  </div>
+</div>
