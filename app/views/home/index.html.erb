@@ -2,21 +2,7 @@
   <div class="content-wrapper">
 		<div class="container-fluid">
 			<h1 class='text-center'>Home</h1>
-			<div class="col-xs-10 col-xs-offset-5">
-				<div>Bem-vindo <%= current_user.email %></div>
-			</div>
-        </div>
-		<ul>
-		<li>
-			<%= link_to 'My Sites', controller: 'sites' %>
-		</li>
-        <li>
-			<%= link_to "Change your password", edit_user_registration_path %>   
-        </li>
-		<li>
-			<%= link_to('Logout', destroy_user_session_path, method: :delete) %>     
-		</li>
-		</ul>
+			
 	</div>
 <% end %>
 

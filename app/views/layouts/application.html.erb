@@ -53,17 +53,21 @@
     </div>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-        <%= link_to 'Login', new_user_session_path, class: 'link-to' %>
-			  <%= link_to 'Cadastro', new_user_registration_path, class: 'link-to' %>
-
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+        <%if !user_signed_in? %>
+          <%= link_to 'Login', new_user_session_path %>
+          <%= link_to 'Cadastro', new_user_registration_path %>
+        <%end%>
+        <%if user_signed_in? %>
+        <h3 class="text-center text-white"><%= current_user.name %></h3>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Clients</a>
+          <a href="#">Contact</a>
+          <%= link_to 'My Sites', controller: 'sites' %>
+          <%= link_to "Change your password", edit_user_registration_path  %>   
+          <%= link_to('Logout', destroy_user_session_path, method: :delete ) %>     
+        <%end%>
     </div>
-    
-
 <script>
 
 </script>
