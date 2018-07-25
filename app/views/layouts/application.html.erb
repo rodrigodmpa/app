@@ -63,14 +63,11 @@
           <a href="#">Services</a>
           <a href="#">Clients</a>
           <a href="#">Contact</a>
-          <%= link_to 'My Sites', controller: 'sites' %>
-          <%= link_to "Change your password", edit_user_registration_path  %>   
-          <%= link_to('Logout', destroy_user_session_path, method: :delete ) %>     
+          <%= link_to 'My Sites', controller: '/sites' %>
+          <%= link_to 'Change your password' , edit_user_registration_path  %>   
+          <%= link_to 'Logout', destroy_user_session_path , method: :delete  %>     
         <%end%>
     </div>
-<script>
-
-</script>
 
   </body>
 </html>

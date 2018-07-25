@@ -1,27 +1,28 @@
 <% if user_signed_in? %>
-  <div class="content-wrapper">
+  	<div class="content-wrapper">
 		<div class="container-fluid">
 			<h1 class='text-center'>Home</h1>
-			
+			<div class="col-sm-5 pull-right m-3 p-3" id="calendar"></div>
+		</div>
 	</div>
 <% end %>
 
 <% if !user_signed_in? %>
 	<div style="width: 100vw; height: 100vh;background:#333;">
-	<div style="padding-top: 30vh;">
-		<h1 align="center" style="color: white;">Bem-vindo ao Sistema de Férias!</h1>
-		<div align="center" class="container">
-			<div class="row">
-				<div class="col-md-4"></div>
-				<div class="col-md-4" style="text-justify:center; text-align: justify;">
-					<p style="margin: 2em 0; color: white;" align="center"> 
-						Projeto em desenvolvimento
-					</p>
+		<div style="padding-top: 30vh;">
+			<h1 align="center" style="color: white;">Bem-vindo ao Sistema de Férias!</h1>
+			<div align="center" class="container">
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4" style="text-justify:center; text-align: justify;">
+						<p style="margin: 2em 0; color: white;" align="center"> 
+							Projeto em desenvolvimento
+						</p>
+					</div>
 				</div>
+				<%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
+				<%= link_to 'Cadastro', new_user_registration_path, class: 'btn btn-primary' %>
 			</div>
-			<%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
-			<%= link_to 'Cadastro', new_user_registration_path, class: 'btn btn-primary' %>
 		</div>
-	</div>
 	</div>
 <% end %>

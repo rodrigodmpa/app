@@ -77,3 +77,7 @@ gem 'devise'
 
 #jquery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+
+#fullcalendar-rails
+gem 'fullcalendar-rails'
+gem 'momentjs-rails', '~> 2.20', '>= 2.20.1'

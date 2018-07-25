@@ -11,13 +11,17 @@
 // about supported directives.
 //
 
-//minha sidebar
+//= require jquery3
+//= require jquery_ujs
 //= require sidebar
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/locale-all
+//= require my_calendar
 //= require rails-ujs
 //= require activestorage
-//= require jquery3
 //= require popper
 //= require bootstrap
-//= require jquery_ujs
 //= require turbolinks
+//= require_self
 //= require_tree .
