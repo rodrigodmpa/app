@@ -73,6 +73,9 @@
     </div>
   <script>
     $('#calendar').fullCalendar({
+        selectable: true,
+        locale: 'pt',
+        theme: 'bootstrap4',
         events: '/events.json'
     });
   </script>
