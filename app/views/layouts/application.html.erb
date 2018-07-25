@@ -21,7 +21,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <%= link_to root_path , :class => "btn btn-outline-secondary",  title: "Home" do%>
+                <%= fa_icon "home" %>
+              <% end %>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
@@ -64,10 +66,15 @@
           <a href="#">Clients</a>
           <a href="#">Contact</a>
           <%= link_to 'My Sites', controller: '/sites' %>
+          <%= link_to 'My Events', controller: '/events' %>
           <%= link_to 'Change your password' , edit_user_registration_path  %>   
           <%= link_to 'Logout', destroy_user_session_path , method: :delete  %>     
         <%end%>
     </div>
-
+  <script>
+    $('#calendar').fullCalendar({
+        events: '/events.json'
+    });
+  </script>
   </body>
 </html>
