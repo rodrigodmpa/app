@@ -27,7 +27,7 @@ class SitesController < ApplicationController
         @site.user_id = current_user.id
 
         if @site.save
-            redirect_to @site
+            redirect_to sites_path
         else
             flash
             render 'new'

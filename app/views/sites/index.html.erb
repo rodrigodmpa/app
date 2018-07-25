@@ -1,8 +1,9 @@
 <div class="container-fluid">
   <blockquote class="blockquote text-center">
-    <p class=" m-3"><h2>Listing sites of: <cite title="Source Title"><%=current_user.name%></cite></h2> </p>
-    
+    <p class=" m-3"><h2>Listing sites of <cite title="Source Title"><%=current_user.name%></cite></h2> </p>
   </blockquote>
+<div class="row">
+<div class="col-12">
   <table class="table table-dark">
     <thead>
       <tr>
@@ -20,11 +21,10 @@
       </tr>
     <% end %>
   </table>
-  
+  </div>
+  </div>
   <%= link_to new_site_path, :class => "btn btn-outline-secondary", title: "Add site" do%>
     <%= fa_icon "plus" %>
   <% end %>
-  <%= link_to root_path , :class => "btn btn-outline-secondary",  title: "Home" do%>
-    <%= fa_icon "home" %>
-  <% end %>
+
 </div>
