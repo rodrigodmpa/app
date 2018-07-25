@@ -2,7 +2,24 @@
   	<div class="content-wrapper">
 		<div class="container-fluid">
 			<h1 class='text-center'>Home</h1>
-			<div class="col-sm-3 pull-right m-3 p-3" id="calendar"></div>
+			<div class="row">
+				<div class="col-sm-2 m-3 p-3 " style="overflow-y: scroll;"> 
+					<table class="table table-dark text-center">
+						<thead>
+						<tr>
+							<th scope="col">Sites</th>
+						</tr>
+						</thead>
+					
+						<% @sites.each do |site| %>
+							<tr scope="row">
+								<td><%= link_to site.title, site.text, :target => "_blank", :class => "badge badge-success" %></td>
+							</tr>
+						<% end %>
+					</table>
+				</div>
+				<div class="col-sm-3 pull-right m-3 p-3" id="calendar" ></div>
+			</div>
 		</div>
 	</div>
 <% end %>
