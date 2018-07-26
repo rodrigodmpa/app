@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <blockquote class="blockquote text-center">
+      <p class=" m-3"><h2>Listing events of <cite title="Source Title"><%=current_user.name%></cite></h2> </p>
+  </blockquote>
+  <div class="row" >
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xs-6">
+      <table class="table table-dark mt-5 mb-5">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Start time</th>
+            <th>End time</th>
+            <th>User</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @events.each do |event| %>
+            <tr>
+              <td><%= event.title %></td>
+              <td><%= event.description %></td>
+              <td><%= event.start_time %></td>
+              <td><%= event.end_time %></td>
+              <td><%= current_user.name %></td>
+              <td><%= link_to 'Show', event , :class => "badge badge-info"%></td>
+              <td><%= link_to 'Edit', edit_event_path(event) , :class => "badge badge-warning"%></td>
+              <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "badge badge-danger" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to new_event_path, :class => "btn btn-lg btn-outline-secondary", title: "Add Event" do%>
+        <%= fa_icon "plus" %>
+      <% end %>
+    </div>
+
+  <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xs-6">
+    <div class=" m-3 p-3 " id="calendar2" ></div></div>
+  </div>
+  <br>
+</div>
+
+<script>
+    $('#calendar2').fullCalendar({
+        height: 500,
+        selectable: true,
+        selectHelper:true,
+        editable: true,
+        eventLimiter: true,
+        locale: 'pt',
+        theme: 'bootstrap4',
+        events: '/events.json',
+        header:{
+        left:'prev,next,today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+        }
+        select: function(start, end) {
+        $.getScript('/events/new', function() {});
+
+        calendar.fullCalendar('unselect');
+      };
+    });
+</script>

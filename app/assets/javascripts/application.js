@@ -10,7 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+//= require jquery3
+//= require jquery_ujs
+//= require sidebar
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/locale-all
+//= require my_calendar
 //= require rails-ujs
 //= require activestorage
+//= require popper
+//= require bootstrap
 //= require turbolinks
+//= require_self
 //= require_tree .

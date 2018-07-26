@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -60,3 +60,24 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+#Gemas que eu adicionei 
+
+#bootstrap
+gem 'bootstrap', '~> 4.1', '>= 4.1.2'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'autoprefixer-rails', '~> 9.0'
+
+#font awesome
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+
+#devise
+gem 'devise'
+
+#jquery
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+
+#fullcalendar-rails
+gem 'fullcalendar-rails'
+gem 'momentjs-rails', '~> 2.20', '>= 2.20.1'
