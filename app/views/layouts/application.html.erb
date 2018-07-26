@@ -73,10 +73,16 @@
     </div>
   <script>
     $('#calendar').fullCalendar({
+        height: 500,
         selectable: true,
         locale: 'pt',
         theme: 'bootstrap4',
-        events: '/events.json'
+        events: '/events.json',
+        header:{
+        left:'prev,next,today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+        }
     });
   </script>
   </body>
